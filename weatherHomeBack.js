@@ -19,6 +19,10 @@ function displayWeather (data){
     
     
     const weatherName = data.name;
+    const rawTemp = data.main.temp;
+    const fixTemp = Math.round(rawTemp);
+
+    console.log(fixTemp);
     
     const cityW = document.getElementById('city-name');
     const temperatureW = document.getElementById('temperature');
@@ -49,7 +53,6 @@ function displayWeather (data){
 }
 
 async function fetchChatResponse (userSearch){
-    console.log(userSearch);
     const apiKey = '454dcf8be544f4822cb24cfead8501ec';
 
     try{
