@@ -15,19 +15,36 @@ document.getElementById('search-button').addEventListener('click', function(){
 })
 
 
-function displayWeather (weather){
+function displayWeather (data){
     
-    console.log(`weather is ${weather.name}`);
+    
+    const weatherName = data.name;
     
     const cityW = document.getElementById('city-name');
     const temperatureW = document.getElementById('temperature');
     const humidityW = document.getElementById('humidity');
     const windspeedW = document.getElementById('wind-speed');
 
-    cityW.innerText =`City: ${weather.name}`;
-    temperatureW.innerText =`Temperature: ${weather.main.temp}`;
-    humidityW.innerText =`Humidity: ${weather.main.humidity}`;
-    windspeedW.innerText =`Wind Speed: ${weather.wind.speed}`;  
+    if(weatherName === undefined) {
+        cityW.innerText ="City: Incorrect City";
+        temperatureW.innerText ="Temperature: ";
+        humidityW.innerText ="Humidity: ";
+        windspeedW.innerText ="Wind Speed: "; 
+    }else {
+        cityW.innerText =`City: ${data.name}`;
+        temperatureW.innerText =`Temperature: ${data.main.temp}`;
+        humidityW.innerText =`Humidity: ${data.main.humidity}`;
+        windspeedW.innerText =`Wind Speed: ${data.wind.speed}`; 
+    }
+    
+    const des = data.weather[0].main;
+    if(des === "Clear"){
+        console.log("Clear");
+    }else if (des === "Clouds") {
+        console.log("Clouds");
+    }else {
+        console.log("not");
+    }
 
 }
 
