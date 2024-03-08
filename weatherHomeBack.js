@@ -11,8 +11,16 @@ document.getElementById('search-button').addEventListener('click', function(){
         fetchChatResponse(userSearch);
         inputElement.value = '';
     }
-})
+});
 
+document.getElementById('clear-button').addEventListener('click', function(){
+    document.getElementById('city-name').innerText ="City: "; ;
+    document.getElementById('temperature').innerText ="Temperature: " ;
+    document.getElementById('humidity').innerText ="Humidity: " ;
+    document.getElementById('wind-speed').innerText ="Wind Speed: " ;
+    document.getElementById('condition').innerText ="Weather Condition: " ;
+    
+});
 
 function displayWeather (data){
     
