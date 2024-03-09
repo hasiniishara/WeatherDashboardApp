@@ -73,6 +73,9 @@ function celsiusToFahrenheit(celsius) {
   };
   
   let orginalTemp;
+  let isFahrenheit = false;
+
+
   document.getElementById('toggleSwitch').addEventListener('change', function() {
 
     
@@ -81,15 +84,24 @@ function celsiusToFahrenheit(celsius) {
     const cTempt = document.getElementById('temperature').textContent.trim();
     const numericPart = cTempt.replace("Temperature: ", "");
 
+    
+
     if(orginalTemp === undefined){
         orginalTemp = parseFloat(numericPart);
         console.log(orginalTemp);
     }
     
     let numericValue = parseFloat(numericPart);
+
+    if (isNaN(numericValue) && isFahrenheit === false) {
+        alert("Please enter a valid temperature value first.");
+        this.checked = !this.checked; 
+        return;
+    }else{
     
     if (this.checked) {
       unitText.textContent = 'F°';
+      isFahrenheit = true;
       console.log('Switch is toggled ON');
        numericValue = celsiusToFahrenheit(numericValue);
       //document.getElementById('temperature').innerText = `Temperature: ${fTempt}`;
@@ -103,4 +115,5 @@ function celsiusToFahrenheit(celsius) {
     }
 
         document.getElementById('temperature').textContent = `Temperature: ${numericValue}`;
+}
   });
