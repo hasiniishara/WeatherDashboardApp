@@ -26,10 +26,10 @@ document.getElementById('clear-button').addEventListener('click', function(){
 function displayWeather (data){
     
     
-    const weatherName = data.name;
-    const rawTemp = data.main.temp;
-    const fixTemp = Math.round(rawTemp);
+    const weatherName = data.cod;
+    
 
+    console.log(weatherName);
     
     const cityW = document.getElementById('city-name');
     const temperatureW = document.getElementById('temperature');
@@ -37,13 +37,17 @@ function displayWeather (data){
     const windspeedW = document.getElementById('wind-speed');
     const weatherCondi = document.getElementById('condition');
 
-    if(weatherName === undefined) {
+    if(weatherName == 404) {
         cityW.innerText ="City: Incorrect City";
         temperatureW.innerText ="Temperature: ";
         humidityW.innerText ="Humidity: ";
         windspeedW.innerText ="Wind Speed: "; 
         weatherCondi.innerText ="Weather Condition: "; 
     }else {
+
+        const rawTemp = data.main.temp;
+        const fixTemp = Math.round(rawTemp);
+
         cityW.innerText =`City: ${data.name}`;
         temperatureW.innerText =`Temperature: ${fixTemp}`;
         humidityW.innerText =`Humidity: ${data.main.humidity}`;
@@ -93,11 +97,11 @@ function celsiusToFahrenheit(celsius) {
     
     let numericValue = parseFloat(numericPart);
 
-    if (isNaN(numericValue) && isFahrenheit === false) {
+    if (isNaN(numericValue)) {
         alert("Please enter a valid temperature value first.");
         this.checked = !this.checked; 
         return;
-    }else{
+    }
     
     if (this.checked) {
       unitText.textContent = 'F°';
@@ -109,11 +113,16 @@ function celsiusToFahrenheit(celsius) {
       unitText.textContent = 'C°';
      // document.getElementById('temperature').innerText = `Temperature: ${numericPart}`;
       console.log('Switch is toggled OFF');
-       numericValue = orginalTemp;
-       console.log(numericValue);
-       console.log(numericValue);
+      if(isFahrenheit){
+        numericValue = Math.round((numericValue - 32) * 5/9);
+        isFahrenheit = false;
+        
+      }else {
+        numericValue = orginalTemp;
+      }
+      
     }
 
         document.getElementById('temperature').textContent = `Temperature: ${numericValue}`;
-}
+
   });
