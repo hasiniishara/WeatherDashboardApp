@@ -59,3 +59,47 @@ body {
 #city-info p {
     margin: 5px 0;
 }
+
+/* The switch (checkbox input) */
+.switch input {
+    margin-left: 10px;
+    display: none;
+  }
+  
+  /* The slider (rounded rectangle) */
+  .slider {
+    margin-left: 10px;
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  /* The slider (circle) */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+  
+  /* Styling when the checkbox is checked */
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+
+#unitText {
+    margin-left: 10px;
+}

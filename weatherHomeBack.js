@@ -22,6 +22,7 @@ document.getElementById('clear-button').addEventListener('click', function(){
     
 });
 
+
 function displayWeather (data){
     
     
@@ -66,3 +67,40 @@ async function fetchChatResponse (userSearch){
     }
 
 }
+
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+  };
+  
+  let orginalTemp;
+  document.getElementById('toggleSwitch').addEventListener('change', function() {
+
+    
+
+    const unitText = document.getElementById('unitText');
+    const cTempt = document.getElementById('temperature').textContent.trim();
+    const numericPart = cTempt.replace("Temperature: ", "");
+
+    if(orginalTemp === undefined){
+        orginalTemp = parseFloat(numericPart);
+        console.log(orginalTemp);
+    }
+    
+    let numericValue = parseFloat(numericPart);
+    
+    if (this.checked) {
+      unitText.textContent = 'F°';
+      console.log('Switch is toggled ON');
+       numericValue = celsiusToFahrenheit(numericValue);
+      //document.getElementById('temperature').innerText = `Temperature: ${fTempt}`;
+    } else {
+      unitText.textContent = 'C°';
+     // document.getElementById('temperature').innerText = `Temperature: ${numericPart}`;
+      console.log('Switch is toggled OFF');
+       numericValue = orginalTemp;
+       console.log(numericValue);
+       console.log(numericValue);
+    }
+
+        document.getElementById('temperature').textContent = `Temperature: ${numericValue}`;
+  });
