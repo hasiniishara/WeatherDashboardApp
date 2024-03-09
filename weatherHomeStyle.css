@@ -15,23 +15,21 @@ body {
     margin-top: 150px;
 }
 
-
-
 #search-input {
-    padding: 10px; /* Adjust padding as needed */
-    width: 200px; /* Adjust width as needed */
-    border: 1px solid #ccc; /* Border */
-    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     outline: none;
 }
 
 #search-button, #clear-button {
-    padding: 10px 20px; /* Adjust padding as needed */
+    padding: 10px 20px;
     margin-left: 10px;
-    background-color: #4CAF50; /* Green background color */
-    color: white; /* White text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -44,7 +42,7 @@ body {
 
 #city-info {
     text-align: left;
-    margin-right: 20px; /* Adjust margin between city info and weather icon */
+    margin-right: 20px;
 }
 
 #weather-icon-container {
@@ -60,14 +58,12 @@ body {
     margin: 5px 0;
 }
 
-/* The switch (checkbox input) */
 .switch input {
     margin-left: 10px;
     display: none;
   }
   
-  /* The slider (rounded rectangle) */
-  .slider {
+.slider {
     margin-left: 10px;
     position: relative;
     display: inline-block;
@@ -76,10 +72,9 @@ body {
     background-color: #ccc;
     border-radius: 20px;
     cursor: pointer;
-  }
+}
   
-  /* The slider (circle) */
-  .slider:before {
+.slider:before {
     position: absolute;
     content: "";
     height: 16px;
@@ -89,16 +84,15 @@ body {
     background-color: white;
     border-radius: 50%;
     transition: 0.4s;
-  }
+}
   
-  /* Styling when the checkbox is checked */
-  input:checked + .slider {
+input:checked + .slider {
     background-color: #2196F3;
-  }
+}
   
-  input:checked + .slider:before {
+input:checked + .slider:before {
     transform: translateX(20px);
-  }
+}
 
 #unitText {
     margin-left: 10px;
