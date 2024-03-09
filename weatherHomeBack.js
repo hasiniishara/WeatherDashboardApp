@@ -24,6 +24,7 @@ document.getElementById('clear-button').addEventListener('click', function(){
     document.getElementById('humidity').innerText ="Humidity: " ;
     document.getElementById('wind-speed').innerText ="Wind Speed: " ;
     document.getElementById('condition').innerText ="Weather Condition: " ;
+    document.getElementById('toggleSwitch').checked = false;
     
 });
 
