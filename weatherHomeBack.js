@@ -121,7 +121,7 @@ function displayWeather (data){
     }
 }
 
-//Create functikn for Fetch the data
+//Create function for Fetch the data
 async function fetchChatResponse (userSearch){
     //API key
     const apiKey = '454dcf8be544f4822cb24cfead8501ec';
