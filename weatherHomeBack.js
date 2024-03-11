@@ -62,14 +62,14 @@ document.getElementById('toggleSwitch').addEventListener('change', function() {
     //If user change toggle(Current toggle in celcious)
     if (this.checked) {
      //Set the toggle text to F°
-      unitText.textContent = 'F°';
+      unitText.textContent = '°F';
       //Set true
       isFahrenheit = true;
       //Call clecious convert to faranheit function & set the value to the varibale.
       numericValue = celsiusToFahrenheit(numericValue);
     } else {
       //If user toggle off the switch again, show toggle text as C°
-      unitText.textContent = 'C°';
+      unitText.textContent = '°C';
       //Check isFahrenheit is true(means that user click the toggle & currently toggle in faranheit stage).
       if(isFahrenheit){
         //Display Celcious value
